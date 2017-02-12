@@ -19,7 +19,8 @@ requirements: test_environment
 
 ## Make Dataset
 data: requirements
-	$(PYTHON_INTERPRETER) src/data/make_dataset.py
+	cd data; \
+	PYTHONPATH='../src/data_tasks' luigi --module final FinalTask --local-scheduler
 
 ## Delete all compiled Python files
 clean:
