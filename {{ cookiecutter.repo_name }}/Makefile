@@ -22,6 +22,10 @@ data: requirements
 	cd data; \
 	PYTHONPATH='../src/data_tasks' luigi --module final FinalTask --local-scheduler
 
+data_clean:
+	rm -rf data/processed/*
+	rm -rf data/interim/*
+
 ## Delete all compiled Python files
 clean:
 	find . -name "*.pyc" -exec rm {} \;
